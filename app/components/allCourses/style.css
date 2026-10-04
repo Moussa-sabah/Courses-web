@@ -1,0 +1,10 @@
+/* Course Filter */
+.filterBtn {
+    background-color: #d4d4d8;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
