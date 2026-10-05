@@ -1,0 +1,17 @@
+/* CourseActions */
+.actionBtn{
+  border: 1px solid  var(--color-line);
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50px;
+  color: var(--color-secondary);
+
+}
+
+
+
+/* Comments */
+
+.commentsList > .comment:not(:last-child) {
+  border-bottom: 1px solid var(--color-line);
+}
