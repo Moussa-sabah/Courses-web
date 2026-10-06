@@ -2,10 +2,10 @@
 .actionBtn{
   border: 1px solid  var(--color-line);
   padding: 10px;
-  font-size: 40px;
+  font-size: 16px;
   border-radius: 50px;
   color: var(--color-secondary);
-
+  cursor: pointer;
 }
 
 

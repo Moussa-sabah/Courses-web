@@ -2,9 +2,10 @@
 import { Course } from '@/app/src/types/course'
 import React from 'react'
 import CurrentVideo from './CurrentVideo'
-import CourseActions from './CourseActions'
+import CourseActions from './courseActions/CourseActions'
 import CourseMaterials from './CourseMaterials'
 import Comments from './comments/Comments'
+
 
 interface Props {
     course: Course
