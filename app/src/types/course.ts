@@ -5,10 +5,10 @@ export interface Lecture {
   status: "not_started" | "completed";
 }
 
-export interface Exam {
+export interface Quiz {
   id: string;
   question: string;
-  choices: string[];
+  options: string[];
   correctAnswerIndex: number;
 }
 

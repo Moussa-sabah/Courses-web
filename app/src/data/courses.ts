@@ -13,7 +13,8 @@ export const courses: Course[] = [
         id: "l1",
         title:
           "Next.js 13 Crash Course Tutorial #1 - Introduction & New Features",
-        videoSrc: "https://www.youtube.com/embed/TJQbDPGzm0Y?si=KKsQxQwj0Gl7isFe",
+        videoSrc:
+          "https://www.youtube.com/embed/TJQbDPGzm0Y?si=KKsQxQwj0Gl7isFe",
         status: "not_started",
       },
       {
