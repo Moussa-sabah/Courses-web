@@ -1,7 +1,7 @@
 import CourseDetailsMain from "@/app/components/courseDetails/courseDetailsMain/CourseDetailsMain"
 import CourseDetailsSecondary from "@/app/components/courseDetails/courseDetailsSecondary/CourseDetailsSecondary"
 import PageBreadcrumb from "@/app/components/courseDetails/PageBreadcrumb"
-import { courses } from "@/app/src/data/courses"
+import { courses } from "@/data/courses"
 import { notFound } from "next/navigation"
 
 interface Props {

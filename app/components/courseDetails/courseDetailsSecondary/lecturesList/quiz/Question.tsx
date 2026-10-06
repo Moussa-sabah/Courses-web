@@ -1,7 +1,7 @@
 
 'use client'
 
-import { Quiz } from '@/app/src/types/course'
+import { Quiz } from '@/types/course'
 import { useState } from 'react'
 
 interface Props {

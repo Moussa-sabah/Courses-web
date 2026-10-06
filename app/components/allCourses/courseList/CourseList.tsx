@@ -1,5 +1,5 @@
 import CourseElement from "./CourseElement";
-import { courses } from '../../../src/data/courses'
+import { courses } from '../../../../data/courses'
 
 export default function CourseList() {
   return (

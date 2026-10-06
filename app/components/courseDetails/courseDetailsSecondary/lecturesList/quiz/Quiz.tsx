@@ -3,7 +3,7 @@ import { LuAlarmClock } from "react-icons/lu";
 
 import Question from './Question';
 import { useEffect, useState } from "react";
-import { quiz } from "@/app/src/data/exam";
+import { quiz } from "@/data/exam";
 
 
 

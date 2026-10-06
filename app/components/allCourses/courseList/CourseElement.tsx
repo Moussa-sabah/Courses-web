@@ -1,4 +1,4 @@
-import { Course } from "@/app/src/types/course";
+import { Course } from "@/types/course";
 import Image from "next/image";
 import Link from "next/link";
 

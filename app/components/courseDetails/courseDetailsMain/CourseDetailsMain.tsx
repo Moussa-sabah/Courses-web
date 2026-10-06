@@ -1,5 +1,5 @@
 
-import { Course } from '@/app/src/types/course'
+import { Course } from '@/types/course'
 import React from 'react'
 import CurrentVideo from './CurrentVideo'
 import CourseActions from './courseActions/CourseActions'
