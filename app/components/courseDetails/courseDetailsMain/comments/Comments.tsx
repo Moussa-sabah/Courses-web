@@ -11,7 +11,7 @@ interface Props {
 export default function Comments({ commentsSectionRef }: Props) {
     return (
         <div ref={commentsSectionRef} className='flex flex-col  py-5'>
-            <h1 className='text-3xl font-semibold'>Comments</h1>
+            <h1 className='text-2xl font-semibold'>Comments</h1>
             <CommentsList />
             <AddComment />
         </div>
