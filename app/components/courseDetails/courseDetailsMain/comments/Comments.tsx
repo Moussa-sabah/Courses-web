@@ -4,9 +4,13 @@ import React from 'react'
 import CommentsList from './CommentsList'
 import AddComment from './AddComment'
 
-export default function Comments() {
+interface Props {
+    commentsSectionRef: React.Ref<HTMLDivElement>
+}
+
+export default function Comments({ commentsSectionRef }: Props) {
     return (
-        <div className='flex flex-col'>
+        <div ref={commentsSectionRef} className='flex flex-col  py-5'>
             <h1 className='text-3xl font-semibold'>Comments</h1>
             <CommentsList />
             <AddComment />
