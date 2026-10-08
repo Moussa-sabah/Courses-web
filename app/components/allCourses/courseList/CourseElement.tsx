@@ -16,10 +16,11 @@ export default function CourseElement({ course }: Props) {
     const progress = isAlllessonsCompleted ? 100 : Math.ceil(completedlessons * (100 / alllessons))
 
     return (
-        <Link onClick={() => selectCourse(course.id)} href={`./course-details/${course.id}`} className="border border-line rounded-lg h-80 p-1 flex flex-col">
-            <Image src='/courseImage/nextJsImage.png' alt="course" width={100} height={100} className="w-full h-3/5 object-cover rounded-lg " />
-            <div className="px-3 py-2 flex flex-col   justify-between flex-1">
+        <Link onClick={() => selectCourse(course.id)} href={`./course-details/${course.id}`} className="border border-line rounded-lg  p-1 flex flex-col gap-1">
+            <Image src={course.thumbnailImage} alt="course" width={200} height={200} className="w-full  object-cover rounded-lg h-50" />
+            <div className="px-3 py-2 flex flex-col gap-4  justify-between flex-1">
                 <div className="flex flex-col gap-1">
+                    <p className="text-[11px] font-semibold">{course.instructor}</p>
                     <p className="font-bold text-lg">{course.title}</p>
                     <p className="text-xs  text-secondary font-semibold line-clamp-2">{course.description}</p>
                 </div>
@@ -33,7 +34,7 @@ export default function CourseElement({ course }: Props) {
                         </div>
                         <p>{progress}%</p>
                     </div>
-                    <button className="text-sm border-2 border-line font-semibold px-3 py-0.5 rounded-md capitalize hover:opacity-60 cursor-pointer transition-all">{course.status === 'completed' ? 'view' :course.status==='not_started'? 'start':'continue'}</button>
+                    <button className="text-sm border-2 border-line font-semibold px-3 py-0.5 rounded-md capitalize hover:opacity-60 cursor-pointer transition-all">{course.status === 'completed' ? 'view' : course.status === 'not_started' ? 'start' : 'continue'}</button>
                 </div>
             </div>
         </Link>

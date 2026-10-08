@@ -30,6 +30,7 @@ export interface Quiz {
 export interface Course {
   id: string;
   title: string;
+  instructor: string;
   description: string;
   thumbnailImage: string;
   status: "not_started" | "in_progress" | "completed";
