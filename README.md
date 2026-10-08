@@ -4,6 +4,9 @@ A lightweight e-learning platform prototype that allows users to browse courses,
 # Tech Stack
 * Next.js
 * Tailwind CSS 
+* Zustand
+* react-youtube
+
 
 # Getting Started
 Follow these steps to run the project locally:

@@ -1,16 +1,24 @@
-
-
-import React from 'react'
+'use client'
 import CommentElement from './CommentElement'
-import '../../style.css'
+import '../../courseDetails.css'
+import { useCourseStore } from '@/store/useCourseStore'
+import { useEffect } from 'react'
 
 export default function CommentsList() {
+
+  const currentCourse = useCourseStore((state) => state.currentCourse)
+
+  useEffect(() => {
+
+  })
   return (
 
-    <div className='commentsList mb-7'>
-      <CommentElement />
-      <CommentElement />
-      <CommentElement />
+    <div className='commentsList mb-7 '>
+      {currentCourse?.comments.map((comment) => {
+        return (
+          <CommentElement key={comment.id} comment={comment} />
+        )
+      })}
     </div>
 
   )

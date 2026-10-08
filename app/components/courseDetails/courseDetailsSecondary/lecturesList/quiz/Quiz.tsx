@@ -2,19 +2,22 @@
 import { LuAlarmClock } from "react-icons/lu";
 
 import Question from './Question';
-import { useEffect, useState } from "react";
-import { quiz } from "@/data/exam";
+import {useState } from "react";
+
+import { useCourseStore } from "@/store/useCourseStore";
 
 
 
 interface Props {
-    endQuiz: () => void
+
+    showQuiz: boolean
+    timer: number
 }
 
 
-export default function Quiz({ endQuiz }: Props) {
+export default function Quiz({ showQuiz, timer }: Props) {
 
-
+    const currentCourse = useCourseStore(state => state.currentCourse)
     const [questionNumber, setQuestionNumber] = useState<number>(1)
 
     const translateValue =
@@ -29,22 +32,7 @@ export default function Quiz({ endQuiz }: Props) {
 
 
 
-    const [timeLeft, setTimeLeft] = useState(600);
 
-
-    useEffect(() => {
-
-
-        if (timeLeft === 0) {
-            endQuiz()
-        }
-        const timerId = setTimeout(() => {
-            setTimeLeft((prev) => prev - 1);
-        }, 1000);
-
-
-        return () => clearTimeout(timerId);
-    }, [timeLeft, endQuiz]);
 
 
     const formatTime = (seconds: number) => {
@@ -55,17 +43,17 @@ export default function Quiz({ endQuiz }: Props) {
 
 
     return (
-        <div className={`cursor-pointer transition-all duration-250 fixed flex flex-col items-center gap-8  bg-[linear-gradient(to_bottom,#3E53B3,#5A78FD)] w-3/10 h-8/10 py-7 rounded-md top-[10%] left-[35%] z-10`}>
+        <div className={`${showQuiz ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'}  transition-all duration-250 fixed flex flex-col items-center gap-8  bg-[linear-gradient(to_bottom,#3E53B3,#5A78FD)] w-3/10 h-8/10 py-7 rounded-md top-[10%] left-[35%] `}>
             <div className='text-white bg-[#fbd500] shadow-[0px_0px_10px_0px_#fbd500] flex items-center gap-2 py-1.25 px-6 text-xl rounded-md'>
                 <LuAlarmClock className='text-2xl' />
-                <p className="">{formatTime(timeLeft)}</p>
+                <p className="">{formatTime(timer)}</p>
 
             </div>
 
             <div className='flex items-center gap-3'>
-                {quiz.map((q, index) => {
+                {currentCourse?.quiz?.MCQS.map((q, index) => {
                     return (
-                        <button onClick={() => setQuestionNumber(index + 1)} disabled={questionNumber === index + 1} key={q.id} className={`${questionNumber === index + 1 ? 'bg-white text-[#3E53B3]' : 'text-white'} font-semibold h-11 w-11 rounded-full border hover:border-3 cursor-pointer border-white flex items-center justify-center text-xl  `}>
+                        <button onClick={() => setQuestionNumber(index + 1)} disabled={questionNumber === index + 1} key={index} className={`${questionNumber === index + 1 ? 'bg-white text-[#3E53B3]' : 'text-white'} font-semibold h-11 w-11 rounded-full border hover:border-3 cursor-pointer border-white flex items-center justify-center text-xl  `}>
                             {index + 1}
                         </button>
                     )
@@ -73,9 +61,9 @@ export default function Quiz({ endQuiz }: Props) {
 
             </div>
             <div className={`flex overflow-hidden max-w-full flex-1 gap-3 justify-center`}>
-                {quiz.map((q, index) => {
+                {currentCourse?.quiz.MCQS?.map((m, index) => {
                     return (
-                        <Question key={index} translateValue={translateValue} quiz={q} />
+                        <Question key={index} translateValue={translateValue} mcq={m} mcqIndex={index} />
                     )
                 })}
             </div>

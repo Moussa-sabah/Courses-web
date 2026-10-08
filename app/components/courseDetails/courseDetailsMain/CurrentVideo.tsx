@@ -1,21 +1,22 @@
-import { Course } from "@/types/course"
+'use client'
+
+import { useCourseStore } from "@/store/useCourseStore"
+import YouTube from "react-youtube"
 
 
-interface Props {
-    course: Course
-}
 
-export default function CurrentVideo({ course }: Props) {
+export default function CurrentVideo() {
+
+    const currentCourse = useCourseStore(state => state.currentCourse)
+    const endLecture = useCourseStore(state => state.endLecture)
+    function handleEndLecture( lectureId: string) {
+        endLecture( lectureId)
+        console.log(currentCourse?.completedLecturesIds)
+    }
 
     return (
-
-
-     
-            <div className="relative w-full aspect-video mb-8">
-                <iframe className="absolute top-0 left-0 w-full h-full rounded-md" src={course?.lectures[0].videoSrc} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;fullscreen" ></iframe>
-            </div>
- 
-
-
+        <div className="w-full relative aspect-video mb-8 ">
+            <YouTube onEnd={() => handleEndLecture( currentCourse?.lastLecture.id as string)} videoId={currentCourse?.lastLecture?.videoId} iframeClassName="absolute w-full h-full rounded-md top-0 left-0" />
+        </div>
     )
 }

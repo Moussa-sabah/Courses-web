@@ -1,6 +1,6 @@
-import { Quiz } from "../types/course";
+import { MCQ } from "../types/Course";
 
-export const quiz: Quiz[] = [
+export const MCQS: MCQ[] = [
   {
     id: "q1",
     question: "Which language is used to structure the content of a web page?",

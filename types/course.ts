@@ -1,15 +1,30 @@
 export interface Lecture {
   id: string;
   title: string;
-  videoSrc: string;
+  videoId: string;
   status: "not_started" | "completed";
 }
 
-export interface Quiz {
+export interface MCQ {
   id: string;
   question: string;
   options: string[];
   correctAnswerIndex: number;
+  selected: boolean;
+}
+
+export interface Comment {
+  id: string;
+  text: string;
+  username: string;
+  userImage: string;
+  createdAt: string;
+}
+
+export interface Quiz {
+  timer: number;
+  MCQS: MCQ[];
+  userAnswers: string[];
 }
 
 export interface Course {
@@ -18,6 +33,9 @@ export interface Course {
   description: string;
   thumbnailImage: string;
   status: "not_started" | "in_progress" | "completed";
+  lastLecture: Lecture;
   lectures: Lecture[];
-  comments: string[];
+  completedLecturesIds: string[];
+  comments: Comment[];
+  quiz: Quiz;
 }

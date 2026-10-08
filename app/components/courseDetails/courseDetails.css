@@ -1,17 +1,20 @@
 /* CourseActions */
 .actionBtn{
   border: 1px solid  var(--color-line);
-  padding: 10px;
-  font-size: 16px;
+  font-size: 17px;
   border-radius: 50px;
-  color: var(--color-secondary);
+  color: var(--color-actionBtn);
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 
-/* Comments */
-
+/* CommentsList */
 .commentsList > .comment:not(:last-child) {
   border-bottom: 1px solid var(--color-line);
 }
