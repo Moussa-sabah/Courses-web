@@ -5,21 +5,21 @@ import Quiz from './quiz/Quiz';
 import { useEffect, useState } from 'react';
 import { useCourseStore } from '@/store/useCourseStore';
 
-import { Lecture } from "@/types/Course";
+import { Lesson } from "@/types/Course";
 import { PiVideoLight } from "react-icons/pi";
 import { PiCheckLight } from "react-icons/pi";
 import PopupBg from "../../PopupBg";
 
-export default function LecturesList() {
+export default function LessonsList() {
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false)
-  const selectLecture = useCourseStore(state => state.selectLecture)
+  const selectLesson = useCourseStore(state => state.selectLesson)
   const currentCourse = useCourseStore(state => state.currentCourse)
 
   const endQuiz = useCourseStore(state => state.endQuiz)
-  function fetchLecture(lectureId: string) {
-    const lecture: Lecture | undefined = currentCourse?.lectures.find(l => l.id === lectureId)
-    selectLecture(lecture as Lecture)
+  function handleSelectLesson(lessonId: string) {
+    const lesson: Lesson | undefined = currentCourse?.lessons.find(l => l.id === lessonId)
+    selectLesson(lesson as Lesson)
   }
 
 
@@ -66,13 +66,13 @@ export default function LecturesList() {
       </div>
       <PopupBg show={showQuiz} handleEnd={handleEndQuiz} />
       <Quiz showQuiz={showQuiz} timer={timeLeft as number} />
-      {currentCourse?.lectures.map((lecture, index) => {
+      {currentCourse?.lessons.map((lesson, index) => {
         return (
-          <div onClick={() => fetchLecture(lecture.id)} key={index} className='py-5 border-b border-line flex items-center gap-4 text-sm font-semibold cursor-pointer hover:bg-[#eceaea] hover:px-2 transition-all'>
-            {lecture.status === 'completed' ? <PiCheckLight className="text-lg min-w-fit" /> : <PiVideoLight className="text-lg min-w-fit" />}
+          <div onClick={() => handleSelectLesson(lesson.id)} key={index} className='py-5 border-b border-line flex items-center gap-4 text-sm font-semibold cursor-pointer hover:bg-[#eceaea] hover:px-2 transition-all'>
+            {lesson.status === 'completed' ? <PiCheckLight className="text-lg min-w-fit" /> : <PiVideoLight className="text-lg min-w-fit" />}
 
 
-            <p >{lecture.title}</p>
+            <p >{lesson.title}</p>
           </div>
         )
       })}

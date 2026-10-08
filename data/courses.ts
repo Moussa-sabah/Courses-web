@@ -9,15 +9,15 @@ export const Courses: Course[] = [
       "In this Next 13 tutorial series, you will learn how to use Next.js to make a simple project, using the new app router & server components.",
     thumbnailImage: "/courseImage/nextJsImage.png",
     status: "not_started",
-    lastLecture: {
+    lastVisitedLesson: {
       id: "l11",
       title:
         "Next.js 13 Crash Course Tutorial #1 - Introduction & New Features",
       videoId: "TJQbDPGzm0Y",
       status: "not_started",
     },
-    completedLecturesIds: [],
-    lectures: [
+    completedLessonsIds: [],
+    lessons: [
       {
         id: "l11",
         title:
@@ -76,7 +76,7 @@ export const Courses: Course[] = [
       },
       {
         id: "c13",
-        text: "Solid content overall, but the audio volume drops slightly in the middle section. Would love to see a follow-up lecture on handling persistent state with middleware!",
+        text: "Solid content overall, but the audio volume drops slightly in the middle section. Would love to see a follow-up lesson on handling persistent state with middleware!",
         userImage: "/usersImages/user3.jpg",
         username: "ali kareem",
         createdAt: "Oct 10,2026",
@@ -95,15 +95,15 @@ export const Courses: Course[] = [
       "In this Next 13 tutorial series, you will learn how to use Next.js to make a simple project, using the new app router & server components.",
     thumbnailImage: "/courseImage/nextJsImage.png",
     status: "not_started",
-    completedLecturesIds: [],
-    lastLecture: {
+    completedLessonsIds: [],
+    lastVisitedLesson: {
       id: "l21",
       title:
         "Next.js 13 Crash Course Tutorial #1 - Introduction & New Features",
       videoId: "TJQbDPGzm0Y",
       status: "not_started",
     },
-    lectures: [
+    lessons: [
       {
         id: "l21",
         title:
@@ -162,7 +162,7 @@ export const Courses: Course[] = [
       },
       {
         id: "c23",
-        text: "Solid content overall, but the audio volume drops slightly in the middle section. Would love to see a follow-up lecture on handling persistent state with middleware!",
+        text: "Solid content overall, but the audio volume drops slightly in the middle section. Would love to see a follow-up lesson on handling persistent state with middleware!",
         userImage: "/usersImages/user3.jpg",
         username: "ali kareem",
         createdAt: "Oct 10,2026",

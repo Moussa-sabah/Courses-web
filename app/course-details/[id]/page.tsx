@@ -27,7 +27,7 @@ export default function CourseDetails({ params }: Props) {
     return (
         <div className="px-15 pt-4 pb-20 flex flex-col gap-8 ">
             <PageBreadcrumb />
-            <p className="text-3xl font-bold w-6/10">{currentCourse?.lastLecture.title}</p>
+            <p className="text-3xl font-bold w-6/10">{currentCourse?.lastVisitedLesson.title}</p>
             {currentCourse && <div className="w-full flex gap-25">
                 <CourseDetailsMain />
                 <CourseDetailsSecondary />

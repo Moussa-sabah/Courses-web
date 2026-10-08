@@ -1,4 +1,4 @@
-export interface Lecture {
+export interface Lesson {
   id: string;
   title: string;
   videoId: string;
@@ -33,9 +33,9 @@ export interface Course {
   description: string;
   thumbnailImage: string;
   status: "not_started" | "in_progress" | "completed";
-  lastLecture: Lecture;
-  lectures: Lecture[];
-  completedLecturesIds: string[];
+  lastVisitedLesson: Lesson;
+  lessons: Lesson[];
+  completedLessonsIds: string[];
   comments: Comment[];
   quiz: Quiz;
 }

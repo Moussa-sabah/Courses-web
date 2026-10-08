@@ -10,10 +10,10 @@ interface Props {
 export default function CourseElement({ course }: Props) {
     const selectCourse = useCourseStore(state => state.selectCourse)
 
-    const allLectures = course?.lectures.length as number
-    const completedLectures = course?.completedLecturesIds.length as number
-    const isAllLecturesCompleted = course?.lectures.length === course?.completedLecturesIds.length
-    const progress = isAllLecturesCompleted ? 100 : Math.ceil(completedLectures * (100 / allLectures))
+    const alllessons = course?.lessons.length as number
+    const completedlessons = course?.completedLessonsIds.length as number
+    const isAlllessonsCompleted = course?.lessons.length === course?.completedLessonsIds.length
+    const progress = isAlllessonsCompleted ? 100 : Math.ceil(completedlessons * (100 / alllessons))
 
     return (
         <Link onClick={() => selectCourse(course.id)} href={`./course-details/${course.id}`} className="border border-line rounded-lg h-80 p-1 flex flex-col">
