@@ -26,11 +26,11 @@ export default function CourseFilter({ handleAddFilter }: Props) {
     }, [removeFilter])
 
     return (
-        <div className='flex items-center gap-3 text-sm'>
-            <button onClick={handleRemoveFilter} className={`filterBtn ${filter === '' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>All Status</button>
-            <button onClick={() => changeFilter('not_started')} className={`filterBtn ${filter === 'not_started' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>Not Started</button>
-            <button onClick={() => changeFilter('in_progress')} className={`filterBtn ${filter === 'in_progress' ? 'bg-primary text-white' : 'bg-notSelectedFilter'}`}>In Progress</button>
-            <button onClick={() => changeFilter('completed')} className={`filterBtn ${filter === 'completed' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>Completed</button>
+        <div className='flex items-center gap-1.5 md:gap-3 text-xs md:text-sm'>
+            <button onClick={handleRemoveFilter} className={`filterBtn px-3  md:px-4 py-2 md:py-1.25  ${filter === '' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>All Status</button>
+            <button onClick={() => changeFilter('not_started')} className={`filterBtn px-3  md:px-4 py-2 md:py-1.25 ${filter === 'not_started' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>Not Started</button>
+            <button onClick={() => changeFilter('in_progress')} className={`filterBtn px-3  md:px-4 py-2 md:py-1.25 ${filter === 'in_progress' ? 'bg-primary text-white' : 'bg-notSelectedFilter'}`}>In Progress</button>
+            <button onClick={() => changeFilter('completed')} className={`filterBtn px-3  md:px-4 py-2 md:py-1.25 ${filter === 'completed' ? 'bg-primary text-white' : 'bg-notSelectedFilter'} `}>Completed</button>
         </div>
     )
 }

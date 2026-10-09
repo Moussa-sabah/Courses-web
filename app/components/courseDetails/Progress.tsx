@@ -14,7 +14,7 @@ export default function Progress() {
 
         <div
             style={{ background: `linear-gradient(to right,#6ABD8A ${progress}%, #E6E6E6 ${progress}%)` }}
-            className='relative w-full  h-1  rounded-full '>
+            className='relative md:w-full  h-1  rounded-full  mx-5'>
             <div
                 style={{ left: `calc(${progress}% - 16px)` }}
                 className="absolute bottom-3 flex flex-col items-center gap-px   ">

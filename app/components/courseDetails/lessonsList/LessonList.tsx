@@ -54,7 +54,7 @@ export default function LessonsList({lessonsRef}:Props) {
   function handleEndQuiz() {
     endQuiz(timeLeft as number)
     setShowQuiz(false)
-    console.log(currentCourse)
+ 
   }
 
   return (
@@ -70,10 +70,10 @@ export default function LessonsList({lessonsRef}:Props) {
         <p className='text-sm text-secondary font-semibold '>In this Next 13 tutorial series, you will learn how to use Next.js to make a simple project, using the new app router & server components.</p>
       </div>
       <PopupBg show={showQuiz} handleEnd={handleEndQuiz} />
-      <Quiz showQuiz={showQuiz} timer={timeLeft as number} />
+      <Quiz showQuiz={showQuiz} timer={timeLeft as number} handleEndQuiz={handleEndQuiz}/>
       {currentCourse?.lessons.map((lesson, index) => {
         return (
-          <div onClick={() => handleSelectLesson(lesson.id)} key={index} className='py-5 border-b border-line flex items-center gap-4 text-sm font-semibold cursor-pointer hover:bg-[#eceaea] hover:px-2 transition-all'>
+          <div onClick={() => handleSelectLesson(lesson.id)} key={index} className='py-5 border-b border-line flex items-center gap-4 text-sm md:text-[16px] lg:text-sm font-semibold cursor-pointer hover:bg-[#eceaea] hover:px-2 transition-all'>
             {lesson.status === 'completed' ? <PiCheckLight className="text-lg min-w-fit" /> : <PiVideoLight className="text-lg min-w-fit" />}
 
 

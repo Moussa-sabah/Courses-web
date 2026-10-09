@@ -1,6 +1,6 @@
 /* CourseActions */
-.actionBtn{
-  border: 1px solid  var(--color-line);
+.actionBtn {
+  border: 1px solid var(--color-line);
   font-size: 17px;
   border-radius: 50px;
   color: var(--color-actionBtn);
@@ -15,6 +15,6 @@
 
 
 /* CommentsList */
-.commentsList > .comment:not(:last-child) {
+.commentsList>.comment:not(:last-child) {
   border-bottom: 1px solid var(--color-line);
 }
