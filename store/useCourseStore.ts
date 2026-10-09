@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { Comment, Course, Lesson } from "@/types/Course";
-import { Courses } from "@/data/Courses";
+import { courses } from "@/data/Courses";
 interface CourseState {
   courses: Course[];
   currentCourse: Course | null;
@@ -21,7 +21,7 @@ interface CourseState {
 export const useCourseStore = create<CourseState>()(
   persist(
     (set, get) => ({
-      courses: Courses,
+      courses: courses,
       currentCourse: null,
       currentCourseId: null,
       commentNumber: 4,

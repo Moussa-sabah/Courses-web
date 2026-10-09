@@ -2,7 +2,7 @@ import { Course } from "../types/Course";
 import { comments } from "./Comments";
 import { MCQS } from "./MCQS";
 
-export const Courses: Course[] = [
+export const courses: Course[] = [
   {
     id: "1",
     title: "Learn HTML In Arabic",
