@@ -8,7 +8,8 @@ import { useCourseStore } from '@/store/useCourseStore';
 import { Lesson } from "@/types/Course";
 import { PiVideoLight } from "react-icons/pi";
 import { PiCheckLight } from "react-icons/pi";
-import PopupBg from "../../PopupBg";
+import PopupBg from "../PopupBg";
+
 
 interface Props{
   lessonsRef: React.Ref<HTMLDivElement>

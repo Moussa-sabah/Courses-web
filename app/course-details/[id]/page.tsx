@@ -1,15 +1,13 @@
 'use client'
 import Comments from "@/app/components/courseDetails/comments/Comments"
-import CourseActions from "@/app/components/courseDetails/courseDetailsMain/courseActions/CourseActions"
-
 import CourseMaterials from "@/app/components/courseDetails/CourseMaterials"
 import CurrentVideo from "@/app/components/courseDetails/CurrentVideo"
-
-import LessonsList from "@/app/components/courseDetails/courseDetailsSecondary/lessonsList/LessonList"
 import Progress from "@/app/components/courseDetails/Progress"
 import PageBreadcrumb from "@/app/components/courseDetails/PageBreadcrumb"
 import { useCourseStore } from "@/store/useCourseStore"
 import { useEffect, useRef } from "react"
+import CourseActions from "@/app/components/courseDetails/courseActions/CourseActions"
+import LessonsList from "@/app/components/courseDetails/lessonsList/LessonList"
 
 
 

@@ -1,6 +1,6 @@
 'use client'
 import CommentElement from './CommentElement'
-import '../../courseDetails.css'
+import '../courseDetails.css'
 import { useCourseStore } from '@/store/useCourseStore'
 import { useEffect } from 'react'
 

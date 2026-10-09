@@ -3,12 +3,12 @@
 import { RiQuestionnaireFill } from "react-icons/ri";
 import { MdLeaderboard } from "react-icons/md";
 import { MdComment } from "react-icons/md";
-import '../../courseDetails.css'
+import '../courseDetails.css'
 import Leaderboard from "./leaderboard/Leaderboard";
 import { useState } from "react";
 import Image from "next/image";
-import PopupBg from "../../PopupBg";
 import AddQuestion from "./AddQuestion";
+import PopupBg from "../PopupBg";
 
 
 interface Props {
