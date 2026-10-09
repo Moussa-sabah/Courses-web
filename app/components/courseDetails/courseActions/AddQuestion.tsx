@@ -1,15 +1,24 @@
 
-
-
 import Image from 'next/image'
-import React from 'react'
+import { useEffect } from 'react'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
 interface Props {
     showAddQuestion: boolean
 }
 
+
 export default function AddQuestion({ showAddQuestion }: Props) {
+
+    useEffect(() => {
+        if (showAddQuestion) {
+
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    })
+
     return (
         <div className={`${showAddQuestion ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'} transition-all duration-250 fixed flex flex-col items-center justify-center   bg-white w-9/10 md:w-8/10 lg:w-5/10 h-3/10 lg:h-5/10 p-5 rounded-md top-[35%] lg:top-[25%] left-[5%] md:left-[10%] lg:left-[25%]`}>
             <div className=' flex gap-3 md:gap-7  text-[15px] w-full  h-full  '>
