@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { Comment, Course, Lesson } from "@/types/Course";
-import { courses } from "@/data/Courses";
+import { Comment, Course, Lesson } from "../types/Course";
+import { courses } from "../data/Courses";
 interface CourseState {
   courses: Course[];
   currentCourse: Course | null;
