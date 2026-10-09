@@ -5,10 +5,10 @@ import { BiSolidDownArrow } from "react-icons/bi";
 export default function Progress() {
 
     const currentCourse = useCourseStore(state => state.currentCourse)
-    const alllessons = currentCourse?.lessons.length as number
+    const allLessons = currentCourse?.lessons.length as number
     const completedlessons = currentCourse?.completedLessonsIds.length as number
-    const isAlllessonsCompleted = currentCourse?.lessons.length === currentCourse?.completedLessonsIds.length
-    const progress = isAlllessonsCompleted ? 100 : Math.ceil(completedlessons * (100 / alllessons))
+    const isAllLessonsCompleted = currentCourse?.lessons.length === currentCourse?.completedLessonsIds.length
+    const progress = isAllLessonsCompleted ? 100 : Math.ceil(completedlessons * (100 / allLessons))
 
     return (
 

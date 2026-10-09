@@ -70,16 +70,18 @@ export const useCourseStore = create<CourseState>()(
             )
               return course;
             const newCompletedIds = [...course.completedLessonsIds, lessonId];
-            const lesson = course.lessons.find(
+            const indexOfLesson = course.lessons.findIndex(
               (lesson) => lesson.id === lessonId,
             );
-            const indexOflesson = course.lessons.indexOf(lesson as Lesson);
+            const lastIndexOfLessons = course.lessons.length-1
+
             return {
               ...course,
-              completedlessonsIds: newCompletedIds,
+              completedLessonsIds: newCompletedIds,
               lastVisitedLesson:
-                lesson?.id !== course.lessons[course.lessons.length - 1].id
-                  ? course.lessons[indexOflesson + 1]
+                course.lessons[indexOfLesson]?.id !==
+                course.lessons[lastIndexOfLessons].id
+                  ? course.lessons[indexOfLesson + 1]
                   : course.lastVisitedLesson,
               lessons: course.lessons.map((lesson) =>
                 lesson.id === lessonId
