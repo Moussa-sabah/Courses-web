@@ -15,7 +15,7 @@ export default function CurrentVideo() {
     }
 
     return (
-        <div className="w-full relative aspect-video mb-8 ">
+        <div className="w-full relative aspect-video  ">
             <YouTube onEnd={() => handleEndlesson(currentCourse?.lastVisitedLesson.id as string)} videoId={currentCourse?.lastVisitedLesson?.videoId} iframeClassName="absolute w-full h-full rounded-md top-0 left-0" />
         </div>
     )

@@ -13,7 +13,7 @@ export default function CommentsList() {
   })
   return (
 
-    <div className='commentsList mb-7 '>
+    <div className='commentsList mb-13 '>
       {currentCourse?.comments.map((comment) => {
         return (
           <CommentElement key={comment.id} comment={comment} />

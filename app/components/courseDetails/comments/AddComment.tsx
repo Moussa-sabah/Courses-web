@@ -16,13 +16,13 @@ export default function AddComment() {
   async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault()
     const comment: Comment = {
-      id: `c${currentCourse?.id}${commentNumber}`,
+      id: `c${commentNumber}`,
       text,
       username: 'Moussa Sabah',
       userImage: '/usersImages/user5.jpg',
       createdAt: new Date().toISOString()
     }
-    addComment( comment)
+    addComment(comment)
     setText('')
     console.log(currentCourse?.comments)
   }

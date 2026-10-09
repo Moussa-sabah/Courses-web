@@ -1,9 +1,16 @@
 'use client'
-import CourseDetailsMain from "@/app/components/courseDetails/courseDetailsMain/CourseDetailsMain"
-import CourseDetailsSecondary from "@/app/components/courseDetails/courseDetailsSecondary/CourseDetailsSecondary"
+import Comments from "@/app/components/courseDetails/comments/Comments"
+import CourseActions from "@/app/components/courseDetails/courseDetailsMain/courseActions/CourseActions"
+
+import CourseMaterials from "@/app/components/courseDetails/CourseMaterials"
+import CurrentVideo from "@/app/components/courseDetails/CurrentVideo"
+
+import LessonsList from "@/app/components/courseDetails/courseDetailsSecondary/lessonsList/LessonList"
+import Progress from "@/app/components/courseDetails/Progress"
 import PageBreadcrumb from "@/app/components/courseDetails/PageBreadcrumb"
 import { useCourseStore } from "@/store/useCourseStore"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
+
 
 
 interface Props {
@@ -24,13 +31,57 @@ export default function CourseDetails({ params }: Props) {
         handleSelectCourse()
     }, [params, selectCourse])
 
+    const desktopCommentsRef = useRef<HTMLDivElement>(null);
+    const mobileCommentsRef = useRef<HTMLDivElement>(null);
+
+
+    const scrollToComments = () => {
+        const isDesktop = window.innerWidth >= 1024;
+        const targetRef = isDesktop ? desktopCommentsRef : mobileCommentsRef;
+
+        targetRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
+
+    const lessonsRef = useRef<HTMLDivElement>(null);
+
+
+
+    const scrollToLessons = () => {
+
+        const targetRef = lessonsRef;
+
+        targetRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
+
+
     return (
-        <div className="px-15 pt-4 pb-20 flex flex-col gap-8 ">
+        <div className="px-10 lg:px-20 pt-4 pb-10 lg:pb-15 flex flex-col gap-8 ">
             <PageBreadcrumb />
-            <p className="text-3xl font-bold w-6/10">{currentCourse?.lastVisitedLesson.title}</p>
-            {currentCourse && <div className="w-full flex gap-25">
-                <CourseDetailsMain />
-                <CourseDetailsSecondary />
+            <p className="text-3xl font-bold lg:w-6/10">{currentCourse?.lastVisitedLesson.title}</p>
+            {currentCourse && <div className="flex flex-col gap-14 lg:flex-row lg:gap-25">
+                <div className="flex flex-col gap-8 lg:gap-10">
+                    <CurrentVideo />
+                    <CourseActions scrollToComments={scrollToComments} scrollToLessons={scrollToLessons} />
+                    <CourseMaterials />
+                    <div ref={desktopCommentsRef} className="hidden lg:block">
+                        <Comments />
+                    </div>
+                </div>
+                <div className="flex flex-col gap-17 lg:gap-17">
+                    <h1 className="text-2xl font-semibold ">Topics for This Course</h1>
+                    <Progress />
+                    <LessonsList lessonsRef={lessonsRef} />
+                    <div ref={mobileCommentsRef} className="lg:hidden">
+                        <Comments />
+                    </div>
+                </div>
+
             </div>}
         </div>
     )

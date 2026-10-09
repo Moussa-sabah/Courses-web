@@ -10,7 +10,11 @@ import { PiVideoLight } from "react-icons/pi";
 import { PiCheckLight } from "react-icons/pi";
 import PopupBg from "../../PopupBg";
 
-export default function LessonsList() {
+interface Props{
+  lessonsRef: React.Ref<HTMLDivElement>
+}
+
+export default function LessonsList({lessonsRef}:Props) {
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false)
   const selectLesson = useCourseStore(state => state.selectLesson)
@@ -53,7 +57,7 @@ export default function LessonsList() {
   }
 
   return (
-    <div className='border border-line px-6 rounded-md py-8'>
+    <div ref={lessonsRef} className='border border-line px-6 rounded-md  py-8 '>
       <div className='border-b border-line pb-8 flex flex-col gap-4'>
         <div className='flex items-center justify-between'>
           <p className='text-xl font-semibold'>Playlist</p>
@@ -72,7 +76,7 @@ export default function LessonsList() {
             {lesson.status === 'completed' ? <PiCheckLight className="text-lg min-w-fit" /> : <PiVideoLight className="text-lg min-w-fit" />}
 
 
-            <p >{lesson.title}</p>
+            <p >{index+1}. {lesson.title}</p>
           </div>
         )
       })}

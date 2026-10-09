@@ -10,18 +10,18 @@ interface Props {
 
 export default function CommentElement({ comment }: Props) {
     return (
-        <div className='comment flex gap-7 py-7  text-[15px]'>
+        <div className='comment flex gap-7 py-7  '>
             <Image src={comment?.userImage} width={100} height={100} alt='' className='rounded-full object-cover h-18 w-18' />
             <div className='flex flex-col gap-4'>
-                <div className='flex flex-col gap-1 font-semibold'>
-                    <p className='text-[#6C6C6C] capitalize'>{comment?.username}</p>
-                    <p className='text-[#ABABAB] '>{new Date(comment.createdAt).toLocaleDateString("en-US", {
+                <div className='flex flex-col gap-1 '>
+                    <p className='text-[#6C6C6C] capitalize font-semibold '>{comment?.username}</p>
+                    <p className='text-secondary  text-sm'>{new Date(comment.createdAt).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                         year: "numeric",
                     })}</p>
                 </div>
-                <p className='text-secondary font-semibold'>{comment?.text}</p>
+                <p className='text-secondary font-medium text-sm'>{comment?.text}</p>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@
 
 export default function Navigation_links() {
     return (
-        <nav className="text-sm flex gap-5  text-secondary   ">
+        <nav className=" text-sm flex gap-5  text-secondary   ">
             <p className="pb-2 cursor-pointer">Home</p>
             <p className="text-primary border-b-2 pb-2 cursor-pointer font-semibold">Courses</p>
             <p className="pb-2 cursor-pointer">Catalog</p>

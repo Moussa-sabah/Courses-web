@@ -13,9 +13,10 @@ import AddQuestion from "./AddQuestion";
 
 interface Props {
     scrollToComments: () => void
+    scrollToLessons: () => void
 }
 
-export default function CourseActions({ scrollToComments }:Props) {
+export default function CourseActions({ scrollToComments, scrollToLessons }: Props) {
 
     const [showLeaderboard, setShowLeaderboard] = useState<boolean>(false)
     const [showAddQuestion, setShowAddQuestion] = useState<boolean>(false)
@@ -26,9 +27,9 @@ export default function CourseActions({ scrollToComments }:Props) {
         setShowAddQuestion(false)
     }
     return (
-        <div className="mb-13 ">
+        <div className=" ">
             <div className="flex items-center gap-3">
-                <button className="actionBtn"><Image src='/icons/list-bullet-svgrepo-com (1).svg' width={19} height={19} alt='' /></button>
+                <button onClick={scrollToLessons} className="actionBtn"><Image src='/icons/list-bullet-svgrepo-com (1).svg' width={19} height={19} alt='' /></button>
                 <button onClick={scrollToComments} className="actionBtn">  <MdComment /></button>
                 <button onClick={() => setShowAddQuestion(true)} className="actionBtn">  <RiQuestionnaireFill /></button>
                 <button onClick={() => setShowLeaderboard(true)} className="actionBtn">  <MdLeaderboard /></button>

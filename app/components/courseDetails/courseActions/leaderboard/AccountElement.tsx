@@ -7,7 +7,7 @@ interface Props {
 
 export default function AccountElement({ name, pts }: Props) {
     return (
-        <div className='bg-white flex py-3 px-5 font-semibold   items-center justify-between w-full border border-black/10 rounded-md'>
+        <div className='bg-white flex py-4 lg:py-3 px-6 lg:px-5 font-semibold items-center justify-between w-full border border-black/10 rounded-md'>
             <p className='capitalize'>{name}</p>
             <p>{pts} pts</p>
         </div>
