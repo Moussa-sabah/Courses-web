@@ -17,7 +17,7 @@ export default function AddQuestion({ showAddQuestion }: Props) {
         } else {
             document.body.style.overflow = "unset";
         }
-    })
+    },[showAddQuestion])
 
     return (
         <div className={`${showAddQuestion ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'} transition-all duration-250 fixed flex flex-col items-center justify-center   bg-white w-9/10 md:w-8/10 lg:w-5/10 h-3/10 lg:h-5/10 p-5 rounded-md top-[35%] lg:top-[25%] left-[5%] md:left-[10%] lg:left-[25%]`}>
