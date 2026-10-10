@@ -29,7 +29,7 @@ export default function Quiz({ showQuiz, timer, handleEndQuiz }: Props) {
         } else {
             document.body.style.overflow = "unset";
         }
-    })
+    },[showQuiz])
 
 
     const translateValue =

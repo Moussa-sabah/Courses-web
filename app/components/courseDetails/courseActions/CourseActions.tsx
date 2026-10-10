@@ -22,9 +22,15 @@ export default function CourseActions({ scrollToComments, scrollToLessons }: Pro
     const [showAddQuestion, setShowAddQuestion] = useState<boolean>(false)
 
 
-    function handleEnd() {
+
+
+    function handleEndLeaderboard() {
         setShowLeaderboard(false)
+    }
+
+    function handleEndAllPopups() {
         setShowAddQuestion(false)
+        setShowLeaderboard(false)
     }
     return (
         <div className=" ">
@@ -34,8 +40,8 @@ export default function CourseActions({ scrollToComments, scrollToLessons }: Pro
                 <button onClick={() => setShowAddQuestion(true)} className="actionBtn">  <RiQuestionnaireFill /></button>
                 <button onClick={() => setShowLeaderboard(true)} className="actionBtn">  <MdLeaderboard /></button>
             </div>
-            <PopupBg show={showLeaderboard || showAddQuestion} handleEnd={handleEnd} />
-            < Leaderboard showLeaderboard={showLeaderboard} />
+            <PopupBg show={showLeaderboard || showAddQuestion} handleEnd={handleEndAllPopups} />
+            < Leaderboard showLeaderboard={showLeaderboard} handleEnd={handleEndLeaderboard} />
             <AddQuestion showAddQuestion={showAddQuestion} />
         </div>
     )
