@@ -11,11 +11,11 @@ import { PiCheckLight } from "react-icons/pi";
 import PopupBg from "../PopupBg";
 
 
-interface Props{
+interface Props {
   lessonsRef: React.Ref<HTMLDivElement>
 }
 
-export default function LessonsList({lessonsRef}:Props) {
+export default function LessonsList({ lessonsRef }: Props) {
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false)
   const selectLesson = useCourseStore(state => state.selectLesson)
@@ -23,6 +23,10 @@ export default function LessonsList({lessonsRef}:Props) {
 
   const endQuiz = useCourseStore(state => state.endQuiz)
   function handleSelectLesson(lessonId: string) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     const lesson: Lesson | undefined = currentCourse?.lessons.find(l => l.id === lessonId)
     selectLesson(lesson as Lesson)
   }
@@ -54,7 +58,7 @@ export default function LessonsList({lessonsRef}:Props) {
   function handleEndQuiz() {
     endQuiz(timeLeft as number)
     setShowQuiz(false)
- 
+
   }
 
   return (
@@ -70,14 +74,14 @@ export default function LessonsList({lessonsRef}:Props) {
         <p className='text-sm text-secondary font-semibold '>In this Next 13 tutorial series, you will learn how to use Next.js to make a simple project, using the new app router & server components.</p>
       </div>
       <PopupBg show={showQuiz} handleEnd={handleEndQuiz} />
-      <Quiz showQuiz={showQuiz} timer={timeLeft as number} handleEndQuiz={handleEndQuiz}/>
+      <Quiz showQuiz={showQuiz} timer={timeLeft as number} handleEndQuiz={handleEndQuiz} />
       {currentCourse?.lessons.map((lesson, index) => {
         return (
           <div onClick={() => handleSelectLesson(lesson.id)} key={index} className='py-5 border-b border-line flex items-center gap-4 text-sm md:text-[16px] lg:text-sm font-semibold cursor-pointer hover:bg-[#eceaea] hover:px-2 transition-all'>
             {lesson.status === 'completed' ? <PiCheckLight className="text-lg min-w-fit" /> : <PiVideoLight className="text-lg min-w-fit" />}
 
 
-            <p >{index+1}. {lesson.title}</p>
+            <p >{index + 1}. {lesson.title}</p>
           </div>
         )
       })}
