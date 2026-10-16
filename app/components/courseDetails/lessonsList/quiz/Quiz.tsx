@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 import { useCourseStore } from "@/store/useCourseStore";
 import { IoChevronBackOutline } from "react-icons/io5";
-
+import { IoMdClose } from "react-icons/io";
 
 interface Props {
 
@@ -57,7 +57,8 @@ export default function Quiz({ showQuiz, timer, handleEndQuiz }: Props) {
 
             <div className="flex  justify-center relative w-full">
                 <button onClick={handleEndQuiz} className=" absolute left-4 md:hidden ">
-                    <IoChevronBackOutline className="text-white text-3xl " />
+                    <IoChevronBackOutline className="text-white text-3xl cursor-pointer 2xs:hidden" />
+                      <IoMdClose className="text-white text-2xl cursor-pointer hidden 2xs:block" />
                 </button>
                 <div className='text-white bg-[#fbd500] shadow-[0px_0px_10px_0px_#fbd500] flex items-center gap-2 py-2  px-8 md:px-7  lg:py-1.25 lg:px-6  rounded-md'>
                     <LuAlarmClock className='text-2xl  lg:text-2xl' />
