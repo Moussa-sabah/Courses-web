@@ -14,9 +14,9 @@ export default function AllCourses() {
 
 
     return (
-        <div className='min-h-10/12 px-5 md:px-10 lg:px-20 py-10  flex-col flex gap-6 md:gap-8 lg:gap-7'>
-            <p className="text-lg md:text-2xl font-semibold">All Materials</p>
-            <CourseFilter handleAddFilter={handleAddFilter}/>
+        <div className=' px-5 md:px-7 lg:px-12 xl:px-20 pt-8 pb-15   flex-col flex gap-5 2xs:gap- md:gap-7 '>
+            <p className="3xs:text-lg md:text-2xl font-semibold">All Materials</p>
+            <CourseFilter handleAddFilter={handleAddFilter} />
             <CourseList />
         </div>
     )

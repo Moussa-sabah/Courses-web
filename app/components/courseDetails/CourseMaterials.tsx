@@ -14,9 +14,9 @@ export default function CourseMaterials() {
             <h1 className='text-2xl font-semibold hidden lg:block'>Cousre Materials</h1>
             <div className='bg-white shadow-[0px_0px_40px_0px_#DCDCDE] flex flex-col gap-10 p-7 lg:p-10 rounded-lg'>
                 <h1 className=' text-lg md:text-xl font-semibold  lg:hidden'>Cousre Materials</h1>
-                <div className=' flex flex-col gap-4 md:gap-0 md:flex-row justify-between  w-full '>
+                <div className=' flex flex-col sm:flex-row gap-4 lg:flex-col xl:flex-row xl:gap-0  justify-between  w-full '>
 
-                    <div className='flex flex-col gap-4 md:w-3/7'>
+                    <div className='flex flex-col gap-4 sm:w-3/7 lg:w-full xl:w-3/7'>
                         <div className='flex items-center justify-between'>
                             <div className='flex items-center gap-2'>
                                 <IoTimeOutline className='text-2xl' />
@@ -33,10 +33,10 @@ export default function CourseMaterials() {
                             </div>
                             <p className='font-semibold'>{currentCourse?.lessons.length}</p>
                         </div>
-                        <p className='bg-line w-full h-px md:hidden'></p>
+                        <p className='bg-line w-full h-px sm:hidden lg:block xl:hidden'></p>
 
                     </div>
-                    <div className='flex flex-col gap-4 md:w-3/7'>
+                    <div className='flex flex-col gap-4 sm:w-3/7 lg:w-full xl:w-3/7'>
                         <div className='flex items-center justify-between'>
                             <div className='flex items-center gap-2'>
                                 <Image width={23} height={23} src='/icons/student-reading-svgrepo-com.svg' alt='' />

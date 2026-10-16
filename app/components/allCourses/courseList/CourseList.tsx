@@ -9,7 +9,7 @@ export default function CourseList() {
   const filteredCourses = useCourseStore(state => state.filteredCourses)
   return (
 
-    <div className="grid  md:grid-cols-2 lg:grid-cols-3  gap-x-5 gap-y-10  lg:gap-10 ">
+    <div className="grid grid-cols-1  sm:grid-cols-2 gap-7 sm:gap-x-5 md:gap-x-7 lg:gap-x-9 lg:gap-y-12 md:gap-y-10  lg:grid-cols-3   ">
       {filteredCourses ? filteredCourses.map((course) => <CourseElement key={course?.id} course={course} />) : courses.map((course) => <CourseElement key={course?.id} course={course} />)}
 
     </div>

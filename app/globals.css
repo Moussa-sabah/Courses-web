@@ -4,7 +4,23 @@
   --color-primary: #181818;
   --color-secondary: #949494;
   --color-line: #DCDCDE;
-  --color-redColor:#E85D60;
-  --color-notSelectedFilter:#e5e3e3;
-  --color-actionBtn:#808089;
+  --color-redColor: #E85D60;
+  --color-notSelectedFilter: #e5e3e3;
+  --color-actionBtn: #808089;
+
+  --breakpoint-3xs: 400px;
+  --breakpoint-2xs: 540px;
+  --breakpoint-xs: 600px;
+  --breakpoint-2sm: 700px;
+  --breakpoint-2lg: 1170px;
+
+}
+
+
+
+
+@media (1170px<=width<1280px) {
+  ._2lgcourseDetails {
+    gap: 50px;
+  }
 }

@@ -17,7 +17,7 @@ export default function CourseElement({ course }: Props) {
 
     return (
         <Link onClick={() => selectCourse(course.id)} href={`./course-details/${course.id}`} className="border border-line rounded-md   flex flex-col gap-1 hover:border-primary transition-all">
-            <Image src={course.thumbnailImage} alt="course" width={200} height={200} className="w-full  object-cover rounded-t-md h-50" />
+            <Image src={course.thumbnailImage} alt="course" width={200} height={200} className="w-full  object-cover rounded-t-md h-50 2xs:h-60 sm:h-50" />
             <div className="p-3 lg:p-4 flex flex-col gap-4  justify-between flex-1">
                 <div className="flex flex-col gap-1">
                     <p className="text-[11px] font-semibold">{course.instructor}</p>

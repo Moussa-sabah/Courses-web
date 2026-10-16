@@ -17,10 +17,10 @@ export default function AddQuestion({ showAddQuestion }: Props) {
         } else {
             document.body.style.overflow = "unset";
         }
-    },[showAddQuestion])
+    }, [showAddQuestion])
 
     return (
-        <div className={`${showAddQuestion ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'} transition-all duration-250 fixed flex flex-col items-center justify-center   bg-white w-9/10 md:w-8/10 lg:w-5/10 h-3/10 lg:h-5/10 p-5 rounded-md top-[35%] lg:top-[25%] left-[5%] md:left-[10%] lg:left-[25%]`}>
+        <div className={`${showAddQuestion ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'}  w-90 h-60 top-1/2 -translate-y-30  left-1/2 -translate-x-45 2xs:w-100 2xs:-translate-x-50 sm:w-120 sm:-translate-x-60 md:w-140 md:-translate-x-70  md:h-70 md:-translate-y-35 lg:w-160 lg:-translate-x-80  lg:h-80 lg:-translate-y-40  transition-all duration-250 fixed flex flex-col items-center justify-center   bg-white    p-5 rounded-md  `}>
             <div className=' flex gap-3 md:gap-7  text-[15px] w-full  h-full  '>
                 <Image src='/usersImages/user5.jpg' width={100} height={100} alt='' className='rounded-full object-cover w-12 h-12 md:h-18 md:w-18' />
                 <div className='flex flex-col justify-between  w-full gap-4 text-sm md:text-[16px]'>
