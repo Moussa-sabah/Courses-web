@@ -3,6 +3,7 @@ A lightweight e-learning platform prototype that allows users to browse courses,
 
 # Tech Stack
 * Next.js
+* TypeScript
 * Tailwind CSS 
 * Zustand
 * react-youtube
