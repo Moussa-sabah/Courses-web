@@ -5,7 +5,7 @@ export default function NotificationsAndAccount() {
     return (
         <div className="flex items-center gap-3 lg:gap-6">
             <Image src='/icons/message-square-lines-svgrepo-com (1).svg' alt="messages" className="cursor-pointer hidden md:block" width={22} height={22} />
-            <div className="relative">
+            <div className="relative hidden 4xs:block">
                 <p className="absolute w-1.5 h-1.5 rounded-full top-0.5 right-1 bg-redColor "></p>
                 <Image src='/icons/notification-svgrepo-com.svg' alt="notifications" width={22} height={22} className="cursor-pointer" />
             </div>

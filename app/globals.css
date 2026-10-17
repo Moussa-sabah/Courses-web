@@ -8,6 +8,7 @@
   --color-notSelectedFilter: #e5e3e3;
   --color-actionBtn: #808089;
 
+  --breakpoint-4xs: 370px;
   --breakpoint-3xs: 400px;
   --breakpoint-2xs: 540px;
   --breakpoint-xs: 600px;
@@ -15,7 +16,3 @@
   --breakpoint-2lg: 1170px;
 
 }
-
-
-
-

@@ -53,7 +53,7 @@ export default function Quiz({ showQuiz, timer, handleEndQuiz }: Props) {
 
 
     return (
-        <div className={`${showQuiz ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'} left-0 top-0 h-full w-full  2xs:w-120 2xs:h-160 2xs:justify-center 2xs:left-1/2 2xs:-translate-x-60 2xs:top-1/2 2xs:-translate-y-80   transition-all duration-250 fixed flex flex-col items-center  gap-8 md:gap-6  bg-[linear-gradient(to_bottom,#3E53B3,#5A78FD)]           py-7     2xs:rounded-md `}>
+        <div className={`${showQuiz ? 'scale-100 opacity-100 z-20' : 'opacity-0 scale-50 -z-10'} left-0 top-0 h-full w-full  2xs:w-120 2xs:h-160 2xs:justify-center 2xs:left-1/2 2xs:-translate-x-60 2xs:top-1/2 2xs:-translate-y-80   duration-250 fixed flex flex-col items-center  gap-8 md:gap-6  bg-[linear-gradient(to_bottom,#3E53B3,#5A78FD)] py-7 2xs:rounded-md`}>
 
             <div className="flex  justify-center relative w-full">
                 <button onClick={handleEndQuiz} className=" absolute left-4 md:hidden ">
@@ -70,7 +70,7 @@ export default function Quiz({ showQuiz, timer, handleEndQuiz }: Props) {
             <div className='flex items-center gap-3'>
                 {currentCourse?.quiz?.MCQS.map((q, index) => {
                     return (
-                        <button onClick={() => setQuestionNumber(index + 1)} disabled={questionNumber === index + 1} key={index} className={`${questionNumber === index + 1 ? 'bg-white text-[#3E53B3]' : 'text-white'} font-semibold w-14 h-14 sm:w-12 sm:h-12 md:w-13 md:h-13  lg:h-12 lg:w-12 rounded-full border hover:border-3 cursor-pointer border-white flex items-center justify-center text-lg md:text-xl lg:text-xl  `}>
+                        <button onClick={() => setQuestionNumber(index + 1)} disabled={questionNumber === index + 1} key={index} className={`${questionNumber === index + 1 ? 'bg-white text-[#3E53B3]' : 'text-white'} font-semibold w-14 h-14 sm:w-12 sm:h-12 md:w-13 md:h-13  lg:h-12 lg:w-12 rounded-full border hover:border-3 cursor-pointer  border-white flex items-center justify-center text-lg md:text-xl lg:text-xl  `}>
                             {index + 1}
                         </button>
                     )
