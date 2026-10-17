@@ -58,11 +58,11 @@ export default function CourseDetails({ params }: Props) {
 
 
     return (
-        <div className="px-5 md:px-10 lg:px-20 pt-4 pb-7 md:pb-10 lg:pb-15 flex flex-col gap-5 2xs:gap-8 ">
+        <div className="px-5 md:px-7 lg:px-10 xl:px-20 pt-4 pb-7 md:pb-10 lg:pb-15 flex flex-col gap-7  ">
             <PageBreadcrumb />
             <p className="text-xl 2xs:text-2xl sm:text-3xl font-bold lg:w-5/10  "> {currentCourse?.lessons.findIndex(lesson => lesson.id === currentCourse?.lastVisitedLesson.id) as number + 1}- {currentCourse?.lastVisitedLesson.title}</p>
-            {currentCourse && <div className="flex flex-col gap-14 lg:flex-row lg:gap-10 _2lgCourseDetails xl:gap-25">
-                <div className="flex flex-col gap-8 lg:gap-15  flex-7">
+            {currentCourse && <div className="flex flex-col gap-14 lg:flex-row lg:gap-10  xl:gap-20">
+                <div className="flex flex-col gap-10  lg:gap-15  flex-7">
 
                     <CurrentVideo scrollToLessons={scrollToLessons} scrollToComments={scrollToComments} />
                     <CourseMaterials />

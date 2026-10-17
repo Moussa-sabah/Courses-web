@@ -21,7 +21,7 @@ export default function CurrentVideo({ scrollToLessons, scrollToComments }: Prop
     }
 
     return (
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-7 ">
             <div className="w-full relative aspect-video  ">
                 <YouTube onEnd={() => handleEndlesson(currentCourse?.lastVisitedLesson.id as string)} videoId={currentCourse?.lastVisitedLesson?.videoId} iframeClassName="absolute w-full h-full rounded-md top-0 left-0" />
             </div>
